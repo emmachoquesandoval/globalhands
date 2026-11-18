@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: globalhands
+
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3306/globalhands}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+
+app:
+  cors:
+    allowed-origin: ${FRONTEND_URL:http://localhost:5173}
+  security:
+    jwt:
+      # Development value only. Set JWT_SECRET to a private Base64 key before deployment.
+      secret: ${JWT_SECRET:MDEyMzQ1Njc4OWFiY2RlZjAxMjM0NTY3ODlhYmNkZWY=}
